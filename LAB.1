@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LAB._1
+{
+    internal class Program
+    {
+        enum TestCaseStatus
+        {
+            Pass,
+            Fail,
+            Blocked,
+            WP,
+            Unexecuted
+        };
+
+        static void Main(string[] args)
+        {
+            //1
+            Console.WriteLine("Введіть числа!");
+            int day = Convert.ToInt32(Console.ReadLine());
+            int mounth = Convert.ToInt32(Console.ReadLine());
+            if ((day > 0) && (day < 32))
+
+                Console.WriteLine("Число {0} може бути днем!", day);
+
+            else
+
+                Console.WriteLine("Число {0} може бути днем!", day);
+
+            if ((mounth > 0) && (mounth < 13))
+
+                Console.WriteLine("Число {0} не може бути  місяцем!", mounth);
+
+
+            else
+                Console.WriteLine("Число {0} не може бути  місяцем!", mounth);
+        
+            
+
+            //2
+            double number;
+            number = Convert.ToString((Console.ReadLine());
+            int sum = 0;
+            int num1 = (int) number * 10;
+            int num2 = num1 % 10;
+            sum = num2 + sum;
+            Console.WriteLine(sum);
+
+           
+
+            //3
+            int h;
+            h = Convert.ToInt32(Console.ReadLine());
+            string result = (h >= 4) && (h <= 10) ? "Доброго ранку!" : (h >= 11) && (h <= 18) ? "Доброго дня!" : (h >= 19) && (h <= 23) ? "Доброго вечора!" : "Доброї ночі!";
+            Console.WriteLine(result);
+
+            //4
+            var test1Status = TestCaseStatus.Pass;
+            Console.WriteLine( test1Status);
+
+            //1(part2)
+            float a1, a2, a3;
+            a1 = Convert.ToInt32(Console.ReadLine());
+            a2 = Convert.ToInt32(Console.ReadLine());
+            a3 = Convert.ToInt32(Console.ReadLine());
+            string result1 = (a1 >= -5) && (a1 <= 5) ? "Число 1 належить до діабазону" : "Число 1 не належить до діабазону!";
+            string result2 = (a2 >= -5) && (a2 <= 5) ? "Число 2 належить до діабазону" : "Число 2 не належить до діабазону!";
+            string result3 = (a3 >= -5) && (a3 <= 5) ? "Число 3 належить до діабазону" : "Число 3 не належить до діабазону!";
+            Console.WriteLine(result1);
+            Console.WriteLine(result2);
+            Console.WriteLine(result3);
+
+            //2(pat2)
+            int n1, n2, n3, min, max;
+            n1 = Convert.ToInt32(Console.ReadLine());
+            n2 = Convert.ToInt32(Console.ReadLine());
+            n3 = Convert.ToInt32(Console.ReadLine());
+
+            max = n1;
+            if (n2 > n1) max = n2;
+            if (n3 > n2) max = n3;
+            Console.WriteLine(max);
+            min = n1;
+            if (n2 < n1) min = n2;
+            if (n3 < n2) min = n3;
+            Console.WriteLine(min);
+
+            //or
+            int x, y, z, max2, min2;
+            x = Convert.ToInt32(Console.ReadLine());
+            y = Convert.ToInt32(Console.ReadLine());
+            z = Convert.ToInt32(Console.ReadLine());
+            max2 = Math.Max(x, Math.Max(y, z));
+            min2 = Math.Min(x, Math.Min(y, z));
+            Console.WriteLine(min2);
+            Console.WriteLine(max2);
+
+
+
+
+        }
+    }
+}
