@@ -1,0 +1,66 @@
+using System;
+
+public class Car
+{
+	public Car ()
+	{
+		string color;
+		int price;
+		string name;
+		string const CompanyName = "COMPANY";
+
+		public string Color {
+		get { return color; }
+		set { color = value; }
+	}
+
+	public Car (string color; string name; int price; )
+	{
+	    this.color = color;
+		this.name = name;
+		this.price = price;
+		 
+
+	}
+	public Car() : this("Color"; "Name"; 0,00; ){}
+
+public void input()
+{
+    Console.OutputEncoding = System.Text.Encoding.Unicode;
+    Console.InputEncoding = System.Text.Encoding.Unicode;
+
+    Console.WriteLine("Введіть назву машини:");
+    this.name = Console.ReadLine();
+    Console.WriteLine("Введіть колір машини:");
+    this.сolor = Console.ReadLine();
+    Console.WriteLine("Введіть ціну машини:");
+    this.price = Convert.ToDouble(Console.ReadLine());
+}
+
+public void print()
+{
+	Console.WriteLine($ "Company name:" + { Car.CompanyName} + "Name:" + { this.name} + "Color:" +{ this.сolor } + "Price:" + { this.price});
+
+}
+public void ChangePrice(double x)
+{
+    price += price * x / 100;
+} 
+Car car1 = new Car("DarkGrean", 30000, "Jaguar");
+Car car2 = new Car("Black", 7900, "Honda");
+Car car3 = new Car("White", 14700, "Volga");
+
+car1.Print();
+car1.ChangePrice(10);
+car1.Print();
+
+car2.Print();
+car2.ChangePrice(10);
+car2.Print();
+
+car3.Print();
+car3.ChangePrice(10);
+car3.Print();
+
+
+}
