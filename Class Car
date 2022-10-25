@@ -46,5 +46,21 @@ public void ChangePrice(double x)
 {
     price += price * x / 100;
 } 
+Car car1 = new Car("DarkGrean", 30000, "Jaguar");
+Car car2 = new Car("Black", 7900, "Honda");
+Car car3 = new Car("White", 14700, "Volga");
+
+car1.Print();
+car1.ChangePrice(10);
+car1.Print();
+
+car2.Print();
+car2.ChangePrice(10);
+car2.Print();
+
+car3.Print();
+car3.ChangePrice(10);
+car3.Print();
+
 
 }
