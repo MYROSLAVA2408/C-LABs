@@ -1,0 +1,130 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace INHERITANCE
+{
+    internal class Program
+    {
+        abstract public class Shape
+        {
+            private string name;
+
+
+            public Shape(string name)
+            {
+                this.name = name;
+            }
+
+
+            public string Name
+            {
+                get { return name; }
+                set { name = value; }
+            }
+
+            abstract public double Area();
+             
+            abstract public double Perimeter();
+            
+        }
+
+        public class Circle : Shape
+        {
+            int radius;
+            public Circle(string name, int rudius): base(name)
+            {this.radius = radius;}
+
+            public int Radius
+            {
+                get { return radius; }
+                set { radius = value; }
+            }
+
+            public override double Area()
+            {
+                double area;
+                area = radius * radius * Math.PI;
+                return area;
+
+            }
+
+            public override double Perimeter()
+            {
+                double perimeter;
+                perimeter = radius * 2 * Math.PI;
+                return perimeter;
+            }
+        }
+
+        public class Square : Shape
+        {
+            int side;
+            public Square(string name, int side) : base(name)
+            { this.side = side; }
+
+            public int Side
+            {
+                get { return side; }
+                set { side = value; }
+            }
+
+            public override double Area()
+            {
+                int area;
+                area = side*side;
+                return area;
+
+            }
+
+            public override double Perimeter()
+            {
+                int perimeter;
+                perimeter = side * 4;
+                return perimeter;
+            }
+        }
+
+
+        static void Main(string[] args)
+        {
+            Square s1 = new Square("S1", 2);
+            Square s2 = new Square("S2", 6);
+
+            Circle c1 = new Circle("C1", 1);
+            Circle c2 = new Circle("C1", 2);
+
+
+            Console.WriteLine($"Name:" + s1.Name + "Area:" + s1.Area() + "Perimeter:" + s1.Perimeter());
+            Console.WriteLine($"Name:" + s2.Name + "Area:" + s2.Area() + "Perimeter:" + s2.Perimeter());
+            Console.WriteLine($"Name:" + c1.Name + "Area:" + c1.Area() + "Perimeter:" + c1.Perimeter());
+            Console.WriteLine($"Name:" + c2.Name + "Area:" + c2.Area() + "Perimeter:" + c2.Perimeter());
+
+
+            if (s1.Area() > s2.Area())
+            {
+                Console.WriteLine("Площа більшого квадрата: " + s1.Area());
+            }
+            else
+            {
+                Console.WriteLine("Площа більшого квадрата: " + s2.Area());
+            }
+
+
+            if (c1.Area() > c2.Area())
+            {
+                Console.WriteLine("Площа більшого кола: " + c1.Area());
+            }
+            else
+            {
+                Console.WriteLine("Площа більшого кола: " + c2.Area());
+            }
+
+            Console.ReadKey();
+
+        }
+    }
+}

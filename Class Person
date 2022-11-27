@@ -1,0 +1,85 @@
+using System;
+
+static void Main(string[] args)
+{
+    Console.OutputEncoding = System.Text.Encoding.Unicode;
+    Console.InputEncoding = System.Text.Encoding.Unicode;
+
+    Person p1 = new Person("Rob", 1994);
+    Person p2 = new Person("Den ", 1995);
+    Person p3 = new Person("Tom", 1996);
+    Person p4 = new Person("Pol", 1997);
+    Person p5 = new Person("Jane", 1998);
+    Person p6 = new Person("Pol", 1999);
+
+    p1.Age();
+    p2.Age();
+    p3.Age();
+    p4.Age();
+    p5.Age();
+    p6.Age();
+
+    p1.Output();
+    p2.Output();
+    p3.Output();
+    p4.Output();
+    p5.Output();
+    p6.Output();
+}
+
+ 
+public class Person
+{
+	public Person ()
+	{
+        private string name;
+        private int  birthyear;
+
+    public DateTime date = DateTime.Today;
+
+    public Person() : this("Albinoka", 2003)
+    {
+    }
+
+    public Person(string name, int birthyear)
+    {
+        this.name = name;
+        this.birthYear = birthyear;
+    }
+
+    public void Age()
+    {
+        int age;
+        age = date.Year - birthyear;
+        Console.WriteLine(age);
+
+    }
+
+    public void Input()
+    {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        Console.InputEncoding = System.Text.Encoding.Unicode;
+
+        Console.WriteLine("Введіть ім'я:");
+        this.name = Console.ReadLine();
+        Console.WriteLine("Введіть рік народження:");
+        this.birthyear = Convert.ToInt32(Console.ReadLine());
+    }
+
+    public void Output()
+    {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        Console.InputEncoding = System.Text.Encoding.Unicode;
+
+        Console.WriteLine($"Ім'я: {this.name}, Вік: {this.birthyear}");
+    }
+
+    public static bool operator ==(Person p1, Person p2)
+    {
+        return (p1.name == p2.name);
+    }
+    public static bool operator !=(Person p1, Person p2)
+    {
+        return (p1.name != p2.name);
+    }
+}
